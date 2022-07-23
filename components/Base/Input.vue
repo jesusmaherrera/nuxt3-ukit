@@ -1,41 +1,24 @@
-<template>
-  <div>
-    <label
-      class="block text-gray-700 text-sm font-bold mb-2"
-      for="select"
-      v-if="!!label"
-    >
-      {{ label }}
-    </label>
-    <select
-      class="w-full p-2 border-gray-300 rounded-lg shadow shadow-sm"
-      id="select"
-      :value="value" @input="$emit('input', $event)"
-    >
-      <option
-        v-for="(option, index) in options"
-        :key="index"
-        :value="option.id">
-        {{ option.label }}
-      </option>
-    </select>
-  </div>
-</template>
-
+<!-- CustomInput.vue -->
 <script setup lang="ts">
-const props = defineProps({
-  value: [String, Number],
+defineProps({
   label: {
     type: String,
     default: '',
   },
-  options: {
-    type: Array,
-    default: []
+  modelValue: {
+    type: [String, Number],
+    default:''
   },
 })
+defineEmits(['update:modelValue'])
 </script>
 
-<style scoped>
-
-</style>
+<template>
+  <label class="block text-gray-700 text-sm font-bold mb-2" v-if="label">{{ label }}</label>
+  <input
+    v-bind="$attrs"
+    :value="modelValue"
+    @input="$emit('update:modelValue', $event.target.value)"
+    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:shadow-outline"
+  />
+</template>

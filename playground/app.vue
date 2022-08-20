@@ -1,9 +1,19 @@
 <template>
   <div>
     try to load a component
+    <button class="px-5 border rounded">
+      Hi 👌
+    </button>
     <UkButton> hola</UkButton>
     <UkInput v-model="message" label="company" /> {{ message }}
-    <UkSelect v-model="value" label="company" :options="[{id: 1, label: 'Audi'}, {id: 2, label: 'Mercedes', }, ]" />
+    <UkSelect
+      v-model="value"
+      label="company"
+      :options="[
+        { id: 1, label: 'Audi' },
+        { id: 2, label: 'Mercedes' },
+      ]"
+    />
   </div>
 </template>
 

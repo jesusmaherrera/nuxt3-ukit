@@ -3,6 +3,7 @@ import MyModule from '..'
 
 export default defineNuxtConfig({
   modules: [
+    '@nuxtjs/tailwindcss',
     MyModule
   ],
   myModule: {

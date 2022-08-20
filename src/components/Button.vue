@@ -8,8 +8,7 @@ defineProps({
 })
 </script>
 <template>
-  <button :style="{backgroundColor: color}">
-    sdasd
-    <slot />
+  <button class="px-5 border rounded">
+      Hi 👌
   </button>
 </template>

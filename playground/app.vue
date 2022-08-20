@@ -1,10 +1,11 @@
 <template>
   <div>
     try to load a component
-    <button class="px-5 border rounded">
+    <UkButton
+      class="bg-gray-400 hover:bg-gray-700 text-white"
+    >
       Hi 👌
-    </button>
-    <UkButton> hola</UkButton>
+    </UkButton>
     <UkInput v-model="message" label="company" /> {{ message }}
     <UkSelect
       v-model="value"

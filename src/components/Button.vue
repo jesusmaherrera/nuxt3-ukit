@@ -4,11 +4,21 @@ defineProps({
     type: String,
     required: false,
     default: '#2fa'
+  },
+  label: {
+    type: String,
+    default: ''
   }
 })
 </script>
 <template>
-  <button class="px-5 border rounded">
-      Hi 👌
+  <button
+    v-bind="$attrs"
+    class="text-white font-bold py-2 px-4 rounded"
+  >
+    <slot />
   </button>
 </template>
+
+<style>
+</style>

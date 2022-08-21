@@ -1,13 +1,7 @@
 <template>
   <div>
     try to load a component
-    <UkButton
-      class="bg-blue-500 hover:bg-blue-700"
-      :loading="loading"
-      @click="loading = true"
-    >
-      Submit
-    </UkButton>
+    <UkButton :loading="loading" label="Submit" @click="loading = true" />
     <UkInput v-model="message" label="company" /> {{ message }}
     <UkSelect
       v-model="value"

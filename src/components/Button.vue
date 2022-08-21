@@ -18,11 +18,13 @@ defineProps({
 <template>
   <button
     v-bind="$attrs"
-    class="text-white font-bold py-2 px-4 rounded"
+    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
   >
     <div class="flex">
       <UkLoading v-if="loading" class="flex-2" />
-      <slot class="flex-auto" />
+      <slot class="flex-auto">
+        {{ label }}
+      </slot>
     </div>
   </button>
 </template>

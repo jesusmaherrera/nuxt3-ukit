@@ -2,9 +2,11 @@
   <div>
     try to load a component
     <UkButton
-      class="bg-gray-400 hover:bg-gray-700 text-white"
+      class="bg-blue-500 hover:bg-blue-700"
+      :loading="loading"
+      @click="loading = true"
     >
-      Hi 👌
+      Submit
     </UkButton>
     <UkInput v-model="message" label="company" /> {{ message }}
     <UkSelect
@@ -21,4 +23,5 @@
 <script setup lang="ts">
 const message = ref('hello')
 const value = ref(2)
+const loading = ref(false)
 </script>
